@@ -34,6 +34,7 @@ class App extends React.PureComponent {
     return (
       <View style={styles.container}>
         <TabNavigator
+          tabBarStyle={styles.tabBarStyle}
           hidesTabTouch={true}
           >
             <TabNavigator.Item  
@@ -43,7 +44,7 @@ class App extends React.PureComponent {
                 selectedTitleStyle={styles.selectedTabText}  
                 tabStyle={{alignSelf:'center'}}
                 renderIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
-                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
+                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/notice_s.png")} />}  
                 onPress={() => this.setState({ selectedTab: 'Notice' })}>  
                 <NoticeView />  
             </TabNavigator.Item> 
@@ -53,8 +54,8 @@ class App extends React.PureComponent {
                 titleStyle={styles.tabText}  
                 selectedTitleStyle={styles.selectedTabText}  
                 tabStyle={{alignSelf:'center'}}
-                renderIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
-                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
+                renderIcon={() => <Image style={styles.icon} source={require("./src/images/playcard.png")} />}  
+                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/playcard_s.png")} />}  
                 onPress={() => this.setState({ selectedTab: 'Opened' })}>  
                 <OpenedView />
             </TabNavigator.Item>  
@@ -64,8 +65,8 @@ class App extends React.PureComponent {
                 titleStyle={styles.tabText}  
                 selectedTitleStyle={styles.selectedTabText}  
                 tabStyle={{alignSelf:'center'}}
-                renderIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
-                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
+                renderIcon={() => <Image style={styles.icon} source={require("./src/images/me.png")} />}  
+                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/me_s.png")} />}  
                 onPress={() => this.setState({ selectedTab: 'Me' })}>  
                 <MeView />
             </TabNavigator.Item>  
@@ -79,14 +80,20 @@ class App extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#efefef',
+  },
+  tabBarStyle:{
+    color:"#fff"
   },
   tabIcon:{
     width:23,
     height:23,
   },
+  tabText:{
+    color:'#333'
+  },
   selectedTabText:{
-    color:'#D81E06'
+    color:'#478CF9'
   },
   icon:{
     width:20,
