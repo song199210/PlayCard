@@ -12,7 +12,7 @@ import TabNavigator from 'react-native-tab-navigator';
 
 import NoticeView from "./src/views/notice";
 import OpenedView from "./src/views/opened";
-import MeView from "./src/views/me/MeView";
+import MeView from "./src/views/me";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -61,7 +61,7 @@ class App extends React.PureComponent {
             </TabNavigator.Item>  
             <TabNavigator.Item  
                 selected={this.state.selectedTab === 'Me'}  
-                title="我的"  
+                title="设置"  
                 titleStyle={styles.tabText}  
                 selectedTitleStyle={styles.selectedTabText}  
                 tabStyle={{alignSelf:'center'}}

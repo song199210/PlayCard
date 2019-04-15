@@ -33,9 +33,10 @@ class OpenedView extends React.PureComponent {
     }]
   }
   render(){
-      let MarkerCom=this.state.markers.map((item)=>{
+      let MarkerCom=this.state.markers.map((item,index)=>{
         return (
           <Marker
+            key={index}
             title={item.title}
             icon={require("../../images/person.png")}
             location={{latitude:item.latitude,longitude:item.longitude}}/>
