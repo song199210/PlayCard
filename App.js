@@ -10,9 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image} from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 
-import NoticeView from "./src/views/notice";
-import OpenedView from "./src/views/opened";
-import MeView from "./src/views/me";
+import LoginView from "./src/views/login";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -33,71 +31,15 @@ class App extends React.PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <TabNavigator
-          tabBarStyle={styles.tabBarStyle}
-          hidesTabTouch={true}
-          >
-            <TabNavigator.Item  
-                selected={this.state.selectedTab === 'Notice'}  
-                title="公告"  
-                titleStyle={styles.tabText}  
-                selectedTitleStyle={styles.selectedTabText}  
-                tabStyle={{alignSelf:'center'}}
-                renderIcon={() => <Image style={styles.icon} source={require("./src/images/notice.png")} />}  
-                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/notice_s.png")} />}  
-                onPress={() => this.setState({ selectedTab: 'Notice' })}>  
-                <NoticeView />  
-            </TabNavigator.Item> 
-            <TabNavigator.Item  
-                selected={this.state.selectedTab === 'Opened'}  
-                title="打卡"  
-                titleStyle={styles.tabText}  
-                selectedTitleStyle={styles.selectedTabText}  
-                tabStyle={{alignSelf:'center'}}
-                renderIcon={() => <Image style={styles.icon} source={require("./src/images/playcard.png")} />}  
-                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/playcard_s.png")} />}  
-                onPress={() => this.setState({ selectedTab: 'Opened' })}>  
-                <OpenedView />
-            </TabNavigator.Item>  
-            <TabNavigator.Item  
-                selected={this.state.selectedTab === 'Me'}  
-                title="设置"  
-                titleStyle={styles.tabText}  
-                selectedTitleStyle={styles.selectedTabText}  
-                tabStyle={{alignSelf:'center'}}
-                renderIcon={() => <Image style={styles.icon} source={require("./src/images/me.png")} />}  
-                renderSelectedIcon={() => <Image style={styles.icon} source={require("./src/images/me_s.png")} />}  
-                onPress={() => this.setState({ selectedTab: 'Me' })}>  
-                <MeView />
-            </TabNavigator.Item>  
-        </TabNavigator>  
+        <LoginView />
       </View>
     )
   }
 }
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#efefef',
-  },
-  tabBarStyle:{
-    color:"#fff"
-  },
-  tabIcon:{
-    width:23,
-    height:23,
-  },
-  tabText:{
-    color:'#333'
-  },
-  selectedTabText:{
-    color:'#478CF9'
-  },
-  icon:{
-    width:20,
-    height:20
   }
 });
 

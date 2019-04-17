@@ -7,6 +7,7 @@ const NoticeNavigator = createStackNavigator({
   }
 }, {
   initialRouteName: 'NoticeView',
+  headerBackTitleVisible:true
 });
 
 export default createAppContainer(NoticeNavigator);
